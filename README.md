@@ -13,6 +13,7 @@
 | [`docs/schema-analysis.md`](docs/schema-analysis.md) | Detaljna analiza `pinka_finance` sheme + trenutni (browser) flow kreiranja + blokeri za automatizaciju |
 | [`docs/mcp-a2a-design.md`](docs/mcp-a2a-design.md) | **Dizajn rješenja** — novi `create_campaign` RPC, headless Safe derivacija, MCP tool, A2A skill, auth, sigurnost, plan |
 | [`docs/seed-pinka-dev-campaign.md`](docs/seed-pinka-dev-campaign.md) | **Runbook (izvedeno)** — ručni direktan SQL insert prve kampanje (donacije za razvoj Pinke) dok ne postoji RPC; placeholder Safe + koraci do objave |
+| [`docs/auth-design.md`](docs/auth-design.md) | **ADR-0001: auth za `create_campaign` preko MCP** — zaseban pinka write MCP, Supabase upstream IdP, impersonirani JWT (cilj) vs service_role+actor (interim), account linking |
 
 ## 60-sekundni sažetak
 
@@ -39,5 +40,7 @@
 - [x] Dizajn MCP + A2A automatizacije
 - [x] **Prva kampanja seedana ručno** (donacije za razvoj Pinke) — draft+private, placeholder Safe; vidi runbook
 - [ ] Derivaj Safe + objavi kampanju (ručno u dashboardu — gumb live od `pinka-app` `d15322b`)
-- [ ] `create_campaign` RPC (zamjena za ručni insert) — [`docs/mcp-a2a-design.md`](docs/mcp-a2a-design.md) §2
-- [ ] MCP tool + A2A skill povrh RPC-a — §9 checklist
+- [x] **Auth dizajn (ADR-0001)** — zaseban pinka write MCP + Supabase IdP + impersonirani JWT
+- [ ] `create_campaign` RPC (zamjena za ručni insert) — [`docs/mcp-a2a-design.md`](docs/mcp-a2a-design.md) §2 + auth grane iz ADR-a §4
+- [ ] pinka write MCP servis (scope `pinka:write`) + account-link flow
+- [ ] A2A skill `create_project` povrh istog
