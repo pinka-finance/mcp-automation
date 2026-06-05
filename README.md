@@ -12,6 +12,7 @@
 |---|---|
 | [`docs/schema-analysis.md`](docs/schema-analysis.md) | Detaljna analiza `pinka_finance` sheme + trenutni (browser) flow kreiranja + blokeri za automatizaciju |
 | [`docs/mcp-a2a-design.md`](docs/mcp-a2a-design.md) | **Dizajn rješenja** — novi `create_campaign` RPC, headless Safe derivacija, MCP tool, A2A skill, auth, sigurnost, plan |
+| [`docs/seed-pinka-dev-campaign.md`](docs/seed-pinka-dev-campaign.md) | **Runbook (izvedeno)** — ručni direktan SQL insert prve kampanje (donacije za razvoj Pinke) dok ne postoji RPC; placeholder Safe + koraci do objave |
 
 ## 60-sekundni sažetak
 
@@ -36,4 +37,7 @@
 
 - [x] Analiza sheme + trenutnog flowa + blokera
 - [x] Dizajn MCP + A2A automatizacije
-- [ ] Implementacija — TODO (checklist u [`docs/mcp-a2a-design.md`](docs/mcp-a2a-design.md) §9)
+- [x] **Prva kampanja seedana ručno** (donacije za razvoj Pinke) — draft+private, placeholder Safe; vidi runbook
+- [ ] Derivaj Safe + objavi kampanju (ručno u dashboardu — gumb live od `pinka-app` `d15322b`)
+- [ ] `create_campaign` RPC (zamjena za ručni insert) — [`docs/mcp-a2a-design.md`](docs/mcp-a2a-design.md) §2
+- [ ] MCP tool + A2A skill povrh RPC-a — §9 checklist
