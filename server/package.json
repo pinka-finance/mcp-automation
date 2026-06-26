@@ -1,0 +1,36 @@
+{
+  "name": "pinka-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "mcp.pinka.io — local stdio MCP for creating/editing pinka.finance campaigns via the shared Supabase backend",
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "pinka-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "parity": "tsx scripts/parity-check.ts",
+    "e2e": "tsx scripts/e2e.ts",
+    "smoke": "tsx scripts/smoke.ts",
+    "test:config": "tsx scripts/test-config.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@safe-global/protocol-kit": "^7.1.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "viem": "^2.50.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
